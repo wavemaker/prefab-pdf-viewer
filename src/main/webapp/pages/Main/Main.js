@@ -9,7 +9,28 @@
  * @newVal: new value of the property
  * @oldVal: old value of the property
  */
+var key;
+var newVal;
+var oldVal;
 Prefab.onPropertyChange = function(key, newVal, oldVal) {
+    debugger;
+    key = key;
+    newVal = newVal;
+    oldVal = oldVal;
+    Prefab.renderPdf(key, newVal, oldVal);
+
+};
+
+Prefab.onReady = function() {
+    Prefab.renderPdf(key, newVal, oldVal);
+
+};
+
+/*
+ * Renders a pdf file depending upon the provided properties
+ */
+Prefab.renderPdf = function (key, newVal, oldVal) {
+
     var pdfData;
     var url;
     if (Prefab.input !== undefined) {
@@ -135,12 +156,4 @@ Prefab.onPropertyChange = function(key, newVal, oldVal) {
             renderPage(pageNum);
         });
     }
-
-};
-
-Prefab.onReady = function() {
-
-
-
-
 };

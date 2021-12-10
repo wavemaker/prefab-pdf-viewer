@@ -9,10 +9,10 @@
   "properties" : {
     "input" : {
       "type" : "object",
-      "displayName" : "input Data",
-      "description" : "inputData -  url or base64 encoded",
+      "displayName" : "DataValue",
+      "description" : "DataValue -  url or base64 encoded",
       "bindable" : "in-bound",
-      "value" : "",
+      "value" : "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf?hsLang=en",
       "widget" : "string",
       "show" : true,
       "showAt" : "",
@@ -24,23 +24,33 @@
       "description" : "Type of pdf to be mentioned",
       "bindable" : "in-out-bound",
       "isList" : true,
+      "value" : "url",
       "widget" : "list",
       "options" : [ "url", "base64" ],
-      "show" : true,
-      "showAt" : "",
-      "disabled" : false
-    },
-    "srcvalue" : {
-      "type" : "string",
-      "displayName" : "Srcvalue",
-      "description" : "src",
-      "bindable" : "in-bound",
-      "widget" : "string",
       "show" : true,
       "showAt" : "",
       "disabled" : false
     }
   },
   "events" : { },
-  "methods" : { }
+  "methods" : {
+    "renderPdf" : {
+      "description" : "Renders a pdf file depending upon the provided properties",
+      "parameters" : [ {
+        "name" : "key",
+        "type" : "any",
+        "description" : "key"
+      }, {
+        "name" : "newVal",
+        "type" : "any",
+        "description" : "newVal"
+      }, {
+        "name" : "oldVal",
+        "type" : "any",
+        "description" : "oldVal"
+      } ],
+      "returnType" : "void",
+      "example" : ""
+    }
+  }
 }
